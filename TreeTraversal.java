@@ -92,6 +92,7 @@ public class OrderTraversal {
 	}
 	
   //InOrderTraversalBinaryTree
+	//LeftRootRight
 	static List inOrder(Node root) {
 		Stack<Node> st = new Stack();
 		List al = new ArrayList();
@@ -110,6 +111,7 @@ public class OrderTraversal {
 	}
 	
   //PreOrderTraversalBinaryTree
+	//RootLeftRight
 	static List preOrder(Node root) {
 		Stack<Node> st = new Stack();
 		List al = new ArrayList();
@@ -129,6 +131,7 @@ public class OrderTraversal {
 	}
 	
   //PostOrderTraversalBinaryTree
+	//LeftRightRoot
 	static List postOrder(Node root) {
 		Stack<Node> st = new Stack();
 		List al = new ArrayList();

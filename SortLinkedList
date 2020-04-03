@@ -1,0 +1,83 @@
+//02-04-2020
+
+public class SortLinkedList {
+
+	static Node sortList(Node head)
+	{
+		Node curr =  head;
+		Node right = null;
+		int length = head.length;
+		int i=0;
+		while(i<length-1)
+		{
+			right = curr.next;
+			while(right!=null) {
+			if(curr.data > right.data)
+			{
+				int temp = curr.data;
+				curr.data = right.data;
+				right.data = temp;
+			}
+			else
+			{
+				right = right.next;
+			}
+			}
+			curr = curr.next;
+			length--;
+		}
+		
+		return head;
+	}
+	
+	static int length(Node head)
+	{
+		int c = 0;
+		while(head!=null)
+		{
+			c++;
+			head = head.next;
+		}
+		return c;
+	}
+	
+	static void printList(Node head) {
+		while(head!=null) {
+			System.out.print(head.data);
+			head = head.next;
+		}
+		System.out.println();
+	}
+	
+	static Node newNode(int d)
+	{
+		Node node = new Node();
+		node.data = d;
+		node.next = null;
+		return node;
+	}
+	
+	static class Node{
+		int data;
+		Node next;
+		int length;
+	}
+	
+	public static void main(String args[])
+	{
+		Node head = newNode(2);
+		head.next = newNode(1);
+		head.next.next = newNode(3);
+		head.next.next.next = newNode(4);
+		head.next.next.next.next = newNode(1);
+		head.next.next.next.next.next = newNode(2);
+		head.next.next.next.next.next.next = newNode(3);
+		
+		head.length = length(head);
+		printList(head);
+		
+		head = sortList(head);
+		
+		printList(head);
+	}
+}

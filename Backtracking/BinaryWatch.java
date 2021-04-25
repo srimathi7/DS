@@ -1,5 +1,5 @@
 //Using Streams
-class Solution {
+class BinaryWatch {
    public List<String> readBinaryWatch(int turnedOn) {
     return IntStream.range(0,12)
         .boxed()
